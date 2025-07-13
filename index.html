@@ -2,17 +2,75 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Malla Interactiva</title>
+  <title>Malla Interactiva - IQ FQ UdelaR</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Malla de Ingeniería</h1>
+  <h1>Malla Interactiva – Ingeniería Química (FQ - Plan 2000)</h1>
   <div class="grid">
-    <div class="materia" data-nombre="Álgebra">Álgebra</div>
-    <div class="materia" data-nombre="Cálculo 1">Cálculo 1</div>
-    <div class="materia" data-nombre="Química">Química</div>
-    <div class="materia" data-nombre="Física">Física</div>
-    <!-- Agregá más materias según tu plan -->
+    <!-- Primer semestre -->
+    <div class="materia" data-nombre="Matematica 01">Matemática 01</div>
+    <div class="materia" data-nombre="Matematica 03">Matemática 03</div>
+    <div class="materia" data-nombre="Quimica General 1">Química General 1</div>
+    <div class="materia" data-nombre="Prevención de riesgos">Prevención de riesgos</div>
+
+    <!-- Segundo semestre -->
+    <div class="materia" data-nombre="Matematica 04" data-previas="Matemática 01, Matemática 03">Matemática 04</div>
+    <div class="materia" data-nombre="Fisica 101" data-previas="Matemática 01">Física 101</div>
+    <div class="materia" data-nombre="Quimica General 2" data-previas="Química General 1">Química General 2</div>
+    <div class="materia" data-nombre="Intro a Ing de Procesos" data-previas="Fisica 101, Matematica 01, Quimica General 2">Intro a Ing de Procesos</div>
+
+    <!-- Tercer semestre -->
+    <div class="materia" data-nombre="Matematica 05" data-previas="Matematica 03, Matematica 04, Matematica 01">Matemática 05</div>
+    <div class="materia" data-nombre="Matematica 06" data-previas="Matematica 01, Matematica 03">Matemática 06</div>
+    <div class="materia" data-nombre="Fisica 102" data-previas="Física 101">Física 102</div>
+    <div class="materia" data-nombre="Quimica Organica 101" data-previas="Quimica General 2">Química Orgánica 101</div>
+    <div class="materia" data-nombre="Quimica Analitica 1" data-previas="Quimica General 2">Química Analítica 1</div>
+
+    <!-- Cuarto semestre -->
+    <div class="materia" data-nombre="Matematica 07" data-previas="Matematica 04">Matemática 07</div>
+    <div class="materia" data-nombre="Matematica 08" data-previas="Matematica 04">Matemática 08</div>
+    <div class="materia" data-nombre="Fisica 103 (Lab)" data-previas="Fisica 102">Física 103 (Lab)</div>
+    <div class="materia" data-nombre="Fisicoquimica 101" data-previas="Quimica Analitica 1, Matematica 04">Fisicoquímica 101</div>
+    <div class="materia" data-nombre="Quimica Analitica 2" data-previas="Quimica Analitica 1">Química Analítica 2</div>
+    <div class="materia" data-nombre="Quimica Organica 102" data-previas="Quimica Organica 102">Química Orgánica 102</div>
+
+    <!-- Quinto semestre -->
+    <div class="materia" data-nombre="Quimica Inorganica" data-previas="Quimica General 2">Química Inorgánica </div>
+    <div class="materia" data-nombre="Fisicoquimica 103" data-previas="Fisicoquimica 101">Fisicoquímica 103</div>
+    <div class="materia" data-nombre="Quimica Organica 103 (Lab)" data-previas="Quimica Organica 101, Quimica Analitica 1">Química Orgánica 103 (Lab)</div>
+    <div class="materia" data-nombre="Fenomenos de Transporte" data-previas="Matematica 07, Matematica 08, Quimica General 1, Matematica 01, Quimica General 2, Fisicoquimica 101, Matematica 03, Matematica 04, Fisica 101">Fenómenos de Transporte</div>
+    <div class="materia" data-nombre="Termodinamica Aplicada" data-previas="Matematica 07, Matematica 08, Matematica 01, Quimica General 1, Matematica 03, Fisica 101, Fisicoquimica 101, Matematica 04, Quimica General 2">Termodinámica Aplicada</div>
+
+    <!-- Sexto semestre -->
+    <div class="materia" data-nombre="Matematica 09" data-previas="Matematica 04">Matemática 09</div>
+    <div class="materia" data-nombre="Fisicoquimica 104" data-previas="Fisicoquimica 103">Fisicoquímica 104</div>
+    <div class="materia" data-nombre="Fluidodinamica" data-previas="Termodinamica Aplicada, Fisicoquimica 101, Fenomenos de Transporte, Quimica Organica 101, Quimica analitica 1, Intro a la Ing de procesos, Fisica 102">Fluidodinámica</div>
+    <div class="materia" data-nombre="Transferencia Calor y Masa 1" data-previas="Fenomenos de Transporte, Fisica 102, Fisicoquimica 101, Termodinamica Aplicada, Int a la Ing de Procesos, Quimica Analitica 1, Quimica Organica 101">Transferencia Calor y Masa 1</div>
+    <div class="materia" data-nombre="Computacion 1" data-previas="Matematica 04, Matematica 03, Matematica 01">Computación 1</div>
+
+    <!-- Séptimo semestre -->
+    <div class="materia" data-nombre="Ing Reacciones Quimicas 1" data-previas="Quimica Analitica 1, Quimica Analitica 2, Matematica 07, Matematica 08, Matematica 05, Fenomenos de Transporte, Fluidodinamica, Fisicoquimica 103, Termodinamica Aplicada">Ing Reacciones Químicas 1</div>
+    <div class="materia" data-nombre="Tecnologia y Servicios 1" data-previas="Quimica Inorganica, Transferencia de Calor y Masa 1, Fisocquimica 103, Fluidodinamica, Fisicoquimica 104, Quimica Analitica 1, Termodinamica Aplicada, Quimica Analitica 2">Tecnología y Servicios 1</div>
+    <div class="materia" data-nombre="Transferencia Calor y Masa 2" data-previas="Transferencia de Calor y Masa 1">Transferencia Calor y Masa 2</div>
+    <div class="materia" data-nombre="Electrotecnica 1" data-previas="Fisica 103, Matematica 04">Electrotecnia 1</div>
+
+    <!-- Octavo semestre -->
+    <div class="materia" data-nombre="Ing Reacciones Quimicas 2" data-previas="Ing Reacciones Químicas 1">Ing Reacciones Químicas 2</div>
+    <div class="materia" data-nombre="Tecnologia y Servicios 2" data-previas="Tecnologia y Servicios 1">Tecnología y Servicios 2</div>
+    <div class="materia" data-nombre="Dinamica y Control de Procesos" data-previas="Computacion 1, Ing Reacciones Quimicas 1">Dinámica y Control de Procesos</div>
+    <div class="materia" data-nombre="Intro a Ing Bioquimica" data-previas="Quimica Organica 101, Quimica Organica 102, Fisicoquimica 103, Quimica Organica 102">Intro a Ing Bioquímica</div>
+    <div class="materia" data-nombre="Mecanica Aplicada" data-previas="Fisica 102, Fisica 103, Matematica 04">Mecánica Aplicada</div>
+
+    <!-- Noveno semestre -->
+    <div class="materia" data-nombre="Ing Bioquimica" data-previas="Intro a Ing Bioquimica">Ing Bioquímica o Trat Efluentes</div>
+    <div class="materia" data-nombre="Diseño de Procesos Quimicos" data-previas="Ing Reacciones Quimicas 1, Transferencia Calor y Masa 2">Diseño de Procesos Químicos</div>
+    <div class="materia" data-nombre="Proyecto Industrial 1" data-previas="Tecnologia y Servicios 2">Proyecto Industrial 1</div>
+    <div class="materia" data-nombre="Gestion de Procesos" data-previas="Dinamica y Control de Procesos">Electiva Gestión</div>
+
+    <!-- Décimo semestre -->
+    <div class="materia" data-nombre="Proyecto Industrial 2" data-pevias="Proyecto Industrial 1">Proyecto Industrial 2</div>
+    <div class="materia" data-nombre="Pasantia" data-previas="Gestion de Procesos">Pasantía</div>
   </div>
   <script src="script.js"></script>
 </body>
