@@ -1,24 +1,40 @@
-document.querySelectorAll('.materia').forEach(m => {
-  m.addEventListener('click', () => {
-    const previas = m.dataset.previas ? m.dataset.previas.split(',') : [];
+document.addEventListener('DOMContentLoaded', () => {
+  const grid = document.querySelector('.grid');
+  const materias = Array.from(grid.querySelectorAll('.materia'));
 
-    const aprobadas = previas.every(p => localStorage.getItem(p.trim()) === '1');
-    if (previas.length > 0 && !aprobadas) {
-      alert(`Para aprobar "${m.dataset.nombre}", primero debés aprobar: ${previas.join(', ')}`);
-      return;
-    }
+  // Obtener semestres únicos y ordenarlos
+  const semestres = [...new Set(materias.map(m => parseInt(m.dataset.semestre)))].sort((a,b) => a-b);
 
-    m.classList.toggle('aprobada');
-    const nombre = m.dataset.nombre;
-    if (m.classList.contains('aprobada')) {
-      localStorage.setItem(nombre, '1');
-    } else {
-      localStorage.removeItem(nombre);
-    }
+  // Vaciar el contenedor original
+  grid.innerHTML = '';
+
+  // Crear contenedores para cada semestre y agregar materias correspondientes
+  semestres.forEach(sem => {
+    const contSem = document.createElement('div');
+    contSem.classList.add('semestre');
+    contSem.dataset.num = sem;
+
+    const titulo = document.createElement('h2');
+    titulo.textContent = `Semestre ${sem}`;
+    contSem.appendChild(titulo);
+
+    // Agregar materias de ese semestre
+    materias
+      .filter(m => parseInt(m.dataset.semestre) === sem)
+      .forEach(materia => {
+        contSem.appendChild(materia);
+      });
+
+    grid.appendChild(contSem);
   });
 
-  const nombre = m.dataset.nombre;
-  if (localStorage.getItem(nombre)) {
-    m.classList.add('aprobada');
-  }
+  // Agregar evento click para mostrar info
+  materias.forEach(materia => {
+    materia.style.cursor = 'pointer';
+    materia.addEventListener('click', () => {
+      const nombre = materia.dataset.nombre;
+      const previas = materia.dataset.previas || 'No tiene materias previas.';
+      alert(`Materia: ${nombre}\nMaterias previas: ${previas}`);
+    });
+  });
 });
